@@ -1,0 +1,11 @@
+{
+  "name": "smart-contract-boilerplate",
+  "version": "1.0.0",
+  "description": "Boilerplate for create smart contracts",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Idris Bowman",
+  "license": "ISC"
+}
