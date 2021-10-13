@@ -4,7 +4,9 @@
   "description": "Boilerplate for create smart contracts",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "deploy": "node ./deploy.js",
+    "compile": "node ./compile.js"
   },
   "author": "Idris Bowman",
   "license": "ISC",
