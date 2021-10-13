@@ -5,10 +5,11 @@ const { interface, bytecode } = require('./compile');
 
 const PRIVATE_KEYS = process.env.PRIVATE_KEYS || "";
 const INFURA_API_KEY = process.env.INFURA_API_KEY;
+const NETWORK = process.env.NETWORK;
  
 const provider = new WalletProvider(
     PRIVATE_KEYS.split(','),
-    `https://ropsten.infura.io/v3/${INFURA_API_KEY}`
+    `https://${NETWORK}.infura.io/v3/${INFURA_API_KEY}`
 );
 
 web3 = new Web3(provider.engine);
@@ -22,6 +23,6 @@ const deploy = async () => {
         .deploy({ data: bytecode, arguments: ['Hello there!']})
         .send({ from: accounts[0], gas: '1000000', gasPrice: '5000000000' });
 
-    console.log('Contract deployed to:', result.options.address);
+    console.log(`Contract deployed to ${NETWORK} at address: ${result.options.address}`);
 };
 deploy();
